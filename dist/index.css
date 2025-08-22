@@ -245,11 +245,15 @@ h2 {
 
 .thumbnails:hover {
   opacity: 1;
+  opacity: 0.5;
+  transition: border 0.2s, opacity 0.2s, background-color 0.2s;
 }
 
 .active-thumb {
   border: 2px solid orange;
   opacity: 1;
+  opacity: 0.5;
+  transition: border 0.2s, opacity 0.2s, background-color 0.2s;
 }
 /* Cart dropdown */
 .cart-dropdown {
