@@ -343,7 +343,7 @@ h2 {
   transition: opacity 0.3s ease;
   margin-top: 1rem;
 }
-* Additional hover states for interactive elements */ .logo:hover {
+.logo:hover {
   opacity: 0.8;
 }
 
@@ -354,6 +354,31 @@ button:focus {
 
 * {
   transition: all 0.3s ease;
+}
+/* Cart buttons */
+button.decrease,
+button.increase {
+  background-color: hsl(223, 64%, 98%);
+  border: 1px solid hsl(223, 64%, 90%);
+  color: orange;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.increase:hover,
+button.decrease:hover {
+  background-color: hsl(223, 64%, 90%);
+}
+
+#cart-dropdown div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
 }
 
 @media (max-width: 1024px) {
@@ -400,12 +425,11 @@ button:focus {
     right: 0;
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: none;
+    display: none !important;
     z-index: 1000;
   }
-
   .nav-links.active {
-    display: block;
+    display: flex;
   }
 
   .nav-links ul {

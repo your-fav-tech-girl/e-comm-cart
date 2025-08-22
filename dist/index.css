@@ -99,21 +99,17 @@ li a {
   color: hsl(219, 9%, 45%);
 }
 
-.menu-toggle {
-  display: none; /* hide toggle on desktop */
-}
-
 .nav-links {
-  display: flex !important; /* always show on desktop */
+  display: flex !important;
 }
 
 .nav-links ul {
-  flex-direction: row; /* horizontal menu on desktop */
+  flex-direction: row;
   gap: 2rem;
 }
 
 .nav-links li a {
-  padding: 0; /* remove mobile padding */
+  padding: 0;
 }
 #container {
   display: flex;
@@ -134,12 +130,13 @@ li a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: white;
   border: none;
-  padding: 14px;
+  font-size: 2rem;
   cursor: pointer;
-  border-radius: 100%;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #prev-btn {
@@ -265,8 +262,13 @@ h2 {
   width: 360px;
   z-index: 1000;
   margin-top: 1rem;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
+#cart-dropdown.show {
+  max-height: 1000px;
+  opacity: 1;
+}
 .cart-header {
   padding: 1.5rem 1.5rem 1rem;
   border-bottom: 1px solid hsl(220, 14%, 75%);
@@ -343,7 +345,7 @@ h2 {
   transition: opacity 0.3s ease;
   margin-top: 1rem;
 }
-* Additional hover states for interactive elements */ .logo:hover {
+.logo:hover {
   opacity: 0.8;
 }
 
@@ -392,36 +394,53 @@ button:focus {
   header {
     padding: 1rem;
   }
-
+  /* Base nav-links hidden for mobile/tablets */
   .nav-links {
     position: absolute;
-    top: 100%;
+    top: 100%; /* just below header */
     left: 0;
     right: 0;
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: none;
+    display: none; /* hidden by default */
     z-index: 1000;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0; /* for smooth slide */
+    overflow: hidden;
+    opacity: 0;
   }
 
+  /* When active (menu toggled) */
   .nav-links.active {
     display: block;
+    max-height: 500px; /* enough to show all links */
+    opacity: 1;
   }
 
+  /* Vertical list for mobile/tablet */
   .nav-links ul {
+    display: flex;
     flex-direction: column;
     padding: 2rem;
     gap: 1rem;
   }
 
+  /* Links style */
   .nav-links a {
     font-weight: 700;
     font-size: 1.1rem;
     padding: 1rem 0;
+    color: hsl(219, 9%, 45%);
+    text-decoration: none;
   }
 
+  /* Show menu toggle button */
   .menu-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
   }
 
   .cart-icon {

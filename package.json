@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build:ts": "tsc",
-    "build": "npm run build:ts && cpx index.html dist && cpx style.css dist && cpx \"images/**/*\" dist/images",
+    "build": "npm run build:ts && cpx index.html dist && cpx index.css dist && cpx \"images/**/*\" dist/images",
     "start": "npm run build && node dist/index.js",
     "watch": "tsc --watch",
     "clean": "rm -rf dist"
