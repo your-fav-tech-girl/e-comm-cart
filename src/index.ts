@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
   ) as HTMLButtonElement;
   const navLinks = document.getElementById("nav-links") as HTMLElement;
 
-  // ===== Menu Toggle Function =====
+  //  Menu Toggle Function 
   function toggleMenu() {
     navLinks.classList.toggle("active");
-    menuToggle.classList.toggle("open"); // optional for animation
+    menuToggle.classList.toggle("open"); 
   }
   menuToggle.addEventListener("click", toggleMenu);
 
-  // ===== Product Data =====
+  //  Product Data 
   const productImages: ProductImage[] = [
     "./images/image-product-1.jpg",
     "./images/image-product-2.jpg",
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let cartItems: CartItem[] = [];
 
-  // ===== Gallery =====
+  //  Gallery 
   function updateMainImage(index: number) {
     mainImg.src = productImages[index];
     thumbnails.forEach((thumb, idx) =>
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMainImage(currentIndex);
   });
 
-  // ===== Quantity Controls =====
+  // Quantity Controls
   decrementBtn.addEventListener("click", () => {
     let current = parseInt(countSpan.innerText);
     if (current > 0) countSpan.innerText = (current - 1).toString();
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     countSpan.innerText = (current + 1).toString();
   });
 
-  // ===== Cart Functions =====
+  // Cart Functions
   function renderCart() {
     let cartDropdown = document.getElementById(
       "cart-dropdown"
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ===== Lightbox =====
+  // Lightbox 
   mainImg.addEventListener("click", () => {
     const lightbox = document.createElement("div");
     lightbox.id = "lightbox";

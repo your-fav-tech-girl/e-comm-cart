@@ -366,23 +366,18 @@ button:focus {
   .hero-pics {
     display: flex;
     flex-direction: row;
-    padding: 0rem 1.3rem;
+    padding: 0rem 0rem;
   }
   .hero-pic img {
-    width: 50vh;
+    width: 60vh;
     border-radius: 15px;
     margin-left: 0rem;
   }
-  .hero-pics {
-    display: flex;
-    flex-direction: row;
-    padding: 0rem 3rem;
-    border-radius: 18px;
-  }
+
   .hero-pics img {
-    width: 14vh;
-    border-radius: 18px;
-    padding: 0rem 1rem;
+    width: 15vh;
+    border-radius: 15px;
+    padding: 0rem 0.5rem;
   }
 
   .hero-text {
@@ -392,36 +387,55 @@ button:focus {
     margin-top: 5rem;
     font-weight: 500;
   }
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.8rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #prev-btn {
+    left: 5px;
+    font-weight: bold;
+  }
+
+  #next-btn {
+    right: 10px;
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 768px) {
   header {
     padding: 1rem;
   }
-  /* Base nav-links hidden for mobile/tablets */
   .nav-links {
     position: absolute;
-    top: 100%; /* just below header */
+    top: 100%;
     left: 0;
     right: 0;
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: none; /* hidden by default */
+    display: none;
     z-index: 1000;
     transition: max-height 0.3s ease, opacity 0.3s ease;
-    max-height: 0; /* for smooth slide */
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
   }
 
-  /* When active (menu toggled) */
   .nav-links.active {
     display: block;
-    max-height: 500px; /* enough to show all links */
+    max-height: 500px;
     opacity: 1;
   }
 
-  /* Vertical list for mobile/tablet */
   .nav-links ul {
     display: flex;
     flex-direction: column;
@@ -429,7 +443,6 @@ button:focus {
     gap: 1rem;
   }
 
-  /* Links style */
   .nav-links a {
     font-weight: 700;
     font-size: 1.1rem;
@@ -438,7 +451,6 @@ button:focus {
     text-decoration: none;
   }
 
-  /* Show menu toggle button */
   .menu-toggle {
     display: block;
     background: none;
